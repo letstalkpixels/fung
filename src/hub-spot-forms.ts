@@ -52,7 +52,7 @@ export class HubSpotForms {
         const payload = this.buildFormSubmission(fields, consent);
 
         const response = await new HttpRequest(
-            'https://api.hsforms.com/submissions/v3/integration/submit/:portalId/:formGuid',
+            'https://api.hsforms.com/submissions/v3/integration/submit/25357114/9a96bc17-866a-447e-8851-15e6879bd405',
         ).post(payload);
     }
 
@@ -63,7 +63,7 @@ export class HubSpotForms {
         const payload = this.buildFormSubmission(fields, consent);
 
         const response = await new HttpRequest(
-            'https://api.hsforms.com/submissions/v3/integration/submit/:portalId/:formGuid',
+            'https://api.hsforms.com/submissions/v3/integration/submit/25357114/a0d8e708-1340-4f3a-bf30-bc2075d68d73',
         ).post(payload);
     }
 
