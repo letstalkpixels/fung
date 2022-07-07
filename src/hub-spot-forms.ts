@@ -9,7 +9,7 @@ interface FormSubmission {
     submittedAt: string;
     fields: HubSpotFormField[];
     context: {
-        hutk: string;
+        hutk?: string;
         pageUri: string;
         pageName: string;
     };
@@ -32,7 +32,7 @@ export class HubSpotForms {
             submittedAt: (+new Date()).toString(),
             fields,
             context: {
-                hutk: hutkCookie,
+                ...(hutkCookie.length > 0 ? { hutk: hutkCookie } : {}),
                 pageUri: location.href,
                 pageName: document.title,
             },
