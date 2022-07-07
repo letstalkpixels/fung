@@ -243,7 +243,7 @@ class FungMoney {
             'newslettermail',
         ) as HTMLInputElement;
 
-        this.hubSpotForms.sendContactForm(
+        this.hubSpotForms.sendNewsLetterForm(
             [
                 {
                     objectTypeId: '0-1',
