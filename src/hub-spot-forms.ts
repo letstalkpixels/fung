@@ -67,6 +67,17 @@ export class HubSpotForms {
         ).post(payload);
     }
 
+    public async sendNewsLetterForm(
+        fields: HubSpotFormField[],
+        consent: boolean,
+    ): Promise<void> {
+        const payload = this.buildFormSubmission(fields, consent);
+
+        const response = await new HttpRequest(
+            'https://api.hsforms.com/submissions/v3/integration/submit/25357114/e63d0113-d4d4-4286-bfd0-cb636aa8f98a',
+        ).post(payload);
+    }
+
     private getCookieValue(name: string): string {
         return (
             document.cookie

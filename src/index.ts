@@ -47,6 +47,15 @@ class FungMoney {
                 this.onContactFormSubmit(event, contactForm);
             });
         }
+
+        const newsLetterForm = document.getElementById(
+            'wf-form-Newsletter',
+        ) as HTMLFormElement;
+        if (newsLetterForm) {
+            newsLetterForm.addEventListener('submit', event => {
+                this.onNewsLetterFormSubmit(event, newsLetterForm);
+            });
+        }
     }
 
     private onSandboxFormSubmit(
@@ -226,6 +235,23 @@ class FungMoney {
                 },
             ],
             consentInput.checked,
+        );
+    }
+
+    private onNewsLetterFormSubmit(event: Event, form: HTMLFormElement): void {
+        const newsLetterEmailInput = document.getElementById(
+            'newslettermail',
+        ) as HTMLInputElement;
+
+        this.hubSpotForms.sendContactForm(
+            [
+                {
+                    objectTypeId: '0-1',
+                    name: 'email',
+                    value: newsLetterEmailInput.value,
+                },
+            ],
+            true,
         );
     }
 }
